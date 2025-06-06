@@ -4,8 +4,17 @@ from pydantic import BaseModel
 from pathlib import Path
 from agent.workflow import generate_website as workflow_generate_website
 import os
+from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # or ["*"] for all origins (not recommended for production)
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 class WebsiteRequest(BaseModel):
     website_desc: str

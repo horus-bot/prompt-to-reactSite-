@@ -316,3 +316,8 @@ def generate_website(
     }
     final_state = workflow.invoke(initial_state)
     return final_state["zip_path"]
+
+if __name__ == "__main__":
+    from IPython.display import display
+    graph = build_workflow()
+    display(graph)
