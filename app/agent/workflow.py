@@ -9,6 +9,7 @@ from groq import Groq
 from dotenv import load_dotenv
 from pydantic import BaseModel
 from typing import List, Optional
+from typing import TypedDict
 
 # Initialize Groq
 load_dotenv()
